@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinay | Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer with 16+ years in Java, Spring Boot, Kafka, AWS, and Kubernetes. Specialising in distributed systems and healthcare SaaS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f0f0f;
+      --gray-1: #1a1a1a;
+      --gray-2: #2e2e2e;
+      --gray-3: #555;
+      --gray-4: #888;
+      --gray-5: #bbb;
+      --gray-6: #e8e8e8;
+      --gray-7: #f5f5f5;
+      --white: #fff;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-mid: #bfdbfe;
+      --border: #e2e2e2;
+      --radius: 6px;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 max(2rem, calc((100% - 760px) / 2));
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--gray-3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+
+    /* LAYOUT */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--gray-4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    /* HERO */
+    #hero {
+      padding: 7rem 0 5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--gray-3);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-stack {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--gray-4);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-stack span {
+      display: inline-block;
+      margin-right: 1.25rem;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+    }
+
+    .btn-primary:hover { background: var(--gray-1); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { background: var(--gray-7); }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-3);
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .about-bio {
+      font-size: 15px;
+      color: var(--gray-1);
+      line-height: 1.75;
+    }
+
+    .about-bio p + p { margin-top: 0.75rem; }
+
+    .domain-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .domain-list li {
+      font-size: 13px;
+      color: var(--gray-4);
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .domain-list li::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .skill-chip {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--gray-3);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--gray-7);
+    }
+
+    /* WORK */
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+
+    .work-item:first-child { border-top: 1px solid var(--border); }
+
+    .work-item:hover .work-arrow { color: var(--accent); transform: translate(2px, -2px); }
+
+    .work-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.35rem;
+    }
+
+    .work-desc {
+      font-size: 13px;
+      color: var(--gray-3);
+      margin-bottom: 0.75rem;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .work-arrow {
+      font-size: 18px;
+      color: var(--gray-5);
+      align-self: flex-start;
+      margin-top: 2px;
+      transition: all 0.15s;
+    }
+
+    /* WRITING */
+    .writing-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .writing-item:first-child { border-top: 1px solid var(--border); }
+
+    .writing-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.25rem;
+    }
+
+    .writing-sub {
+      font-size: 13px;
+      color: var(--gray-4);
+    }
+
+    .writing-link {
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .writing-link:hover { text-decoration: underline; }
+
+    /* CONTACT */
+    #contact { border-bottom: none; }
+
+    .contact-heading {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: var(--gray-3);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--gray-4);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--gray-4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--black); }
+
+    /* AVAILABILITY DOT */
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--gray-3);
+      margin-bottom: 2rem;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 2px #dcfce7;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 2px #dcfce7; }
+      50% { box-shadow: 0 0 0 4px #dcfce7; }
+    }
+
+    @media (max-width: 500px) {
+      nav { padding: 0 1.25rem; }
+      .container { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-name">Vinay</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="availability">
+        <span class="dot"></span>
+        Open to senior engineering roles
+      </div>
+      <p class="hero-eyebrow">Senior Software Engineer · Bengaluru</p>
+      <h1>Distributed systems<br>and healthcare SaaS.</h1>
+      <p class="hero-sub">
+        16+ years building large-scale Java platforms — from multi-tenant SaaS 
+        architecture to event-driven microservices in highly regulated domains.
+      </p>
+      <p class="hero-stack">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Kafka</span>
+        <span>AWS</span>
+        <span>Kubernetes</span>
+      </p>
+      <div class="btn-row">
+        <a href="#work" class="btn btn-primary">View work</a>
+        <a href="#" class="btn btn-secondary">Resume ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <div>
+          <h2>Background</h2>
+          <div class="about-bio">
+            <p>
+              I build backend platforms that run at scale — event-driven architectures, 
+              multi-tenant data models, and cloud-native infrastructure. Most of my work 
+              has been in healthcare and enterprise SaaS, where correctness and 
+              reliability aren't optional.
+            </p>
+            <p>
+              Previously at Philips, where I worked on OneSpace — a multi-tenant platform 
+              for IoT device connectivity, entitlement management, and contract lifecycle 
+              across enterprise customers.
+            </p>
+          </div>
+          <ul class="domain-list">
+            <li>Healthtech &amp; MedTech platforms</li>
+            <li>Fintech &amp; payments infrastructure</li>
+            <li>Enterprise SaaS &amp; multi-tenant architecture</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Core skills</h2>
+          <div class="skills-grid">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">Spring Boot</span>
+            <span class="skill-chip">Kafka</span>
+            <span class="skill-chip">AWS</span>
+            <span class="skill-chip">Kubernetes</span>
+            <span class="skill-chip">Microservices</span>
+            <span class="skill-chip">GraphQL</span>
+            <span class="skill-chip">REST APIs</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">DevSecOps</span>
+            <span class="skill-chip">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="container">
+      <p class="section-label">Selected work</p>
+      <div class="work-list">
+
+        <a href="#" class="work-item">
+          <div>
+            <p class="work-title">OneSpace — Philips</p>
+            <p class="work-desc">
+              Multi-tenant SaaS platform for IoT remote device connectivity, 
+              entitlement and contract management across global enterprise customers. 
+              Designed the platform's multi-tenant data architecture and led 
+              DevSecOps practices across the engineering org.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Multi-tenant</span>
+            </div>
+          </div>
+          <span class="work-arrow">↗</span>
+        </a>
+
+        <a href="#" class="work-item">
+          <div>
+            <p class="work-title">Project 2 — Company name</p>
+            <p class="work-desc">
+              Brief description of what you built, the problem it solved, 
+              and the scale or impact. 2–3 sentences is enough.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Kafka</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">GraphQL</span>
+            </div>
+          </div>
+          <span class="work-arrow">↗</span>
+        </a>
+
+        <a href="#" class="work-item">
+          <div>
+            <p class="work-title">Project 3 — Company name</p>
+            <p class="work-desc">
+              Brief description of what you built, the problem it solved, 
+              and the scale or impact. 2–3 sentences is enough.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Java</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+          <span class="work-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="container">
+      <p class="section-label">Writing &amp; content</p>
+      <div class="work-list">
+        <div class="writing-item">
+          <div>
+            <p class="writing-title">Instagram · @yourhandle</p>
+            <p class="writing-sub">Java · AWS · AI · GraphQL · Spring Boot — real-world engineering depth, not generic tutorials.</p>
+          </div>
+          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="writing-link">Follow ↗</a>
+        </div>
+        <div class="writing-item">
+          <div>
+            <p class="writing-title">GitHub · yourusername</p>
+            <p class="writing-sub">Open source work, code samples, and side projects.</p>
+          </div>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="writing-link">View ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2 class="contact-heading">Open to the right<br>senior engineering role.</h2>
+      <p class="contact-sub">
+        Interested in distributed systems, healthcare SaaS, or fintech? 
+        I'm looking for roles where the engineering problem is genuinely hard.
+      </p>
+      <a href="mailto:your@email.com" class="contact-email">your@email.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2025 Vinay</p>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
