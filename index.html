@@ -636,60 +636,152 @@
   <!-- WORK -->
   <section id="work">
     <div class="container">
-      <p class="section-label">Selected work</p>
+      <p class="section-label">Projects</p>
       <div class="work-list">
 
-        <a href="#" class="work-item">
+        <div class="work-item project-card">
           <div>
-            <p class="work-title">OneSpace — Philips</p>
-            <p class="work-desc">
-              Multi-tenant SaaS platform for IoT remote device connectivity, 
-              entitlement and contract management across global enterprise customers. 
-              Designed the platform's multi-tenant data architecture and led 
-              DevSecOps practices across the engineering org.
-            </p>
+            <p class="work-title">Philips OneSpace – Connected Healthcare Platform ⭐⭐⭐⭐⭐</p>
+            <p class="project-highlight">Role: Software Technologist / Backend Platform Engineer</p>
+            <p class="project-meta">Domain: Healthcare | IoT | SaaS | Cloud Platform</p>
+            <p class="project-meta">Tech Stack: Java 17, Spring Boot, Kafka, PostgreSQL, Redis, AWS (Lambda, EC2, IAM, RDS, S3, CloudWatch), Docker, Kubernetes</p>
+            <p class="project-summary">OneSpace is a multi-tenant cloud platform that manages connected healthcare devices across hospitals. It enables secure device onboarding, remote connectivity, entitlement management, identity and access management, and healthcare workflow integration while supporting thousands of medical devices with tenant isolation and compliance.</p>
+            <ul class="project-bullets">
+              <li>Owned the Entitlement Management domain for licensing-based access to devices, services, and healthcare data.</li>
+              <li>Designed scalable backend microservices and REST APIs, and built Kafka-based event processing for telemetry and device status updates.</li>
+              <li>Improved API latency from 40 ms to 8 ms and reduced Lambda cold-start times by 60%.</li>
+            </ul>
             <div class="work-tags">
-              <span class="tag">Java</span>
+              <span class="tag">Java 17</span>
               <span class="tag">Spring Boot</span>
-              <span class="tag">Kubernetes</span>
+              <span class="tag">Kafka</span>
               <span class="tag">AWS</span>
               <span class="tag">Multi-tenant</span>
             </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </a>
+        </div>
 
-        <a href="#" class="work-item">
+        <div class="work-item project-card">
           <div>
-            <p class="work-title">Project 2 — Company name</p>
-            <p class="work-desc">
-              Brief description of what you built, the problem it solved, 
-              and the scale or impact. 2–3 sentences is enough.
-            </p>
+            <p class="work-title">Entitlement Management Platform ⭐⭐⭐⭐⭐</p>
+            <p class="project-highlight">Role: Technical Owner</p>
+            <p class="project-meta">Domain: Identity &amp; Access Management | Authorization | Multi-Tenant SaaS</p>
+            <p class="project-summary">Designed and owned the entitlement platform within OneSpace, determining which hospitals, users, devices, and applications can access licensed capabilities based on contracts and subscriptions. Every API request and device connection passes through this authorization layer.</p>
+            <ul class="project-bullets">
+              <li>Built a low-latency authorization layer with locally cached entitlement rules and Kafka-based synchronization.</li>
+              <li>Eliminated database bottlenecks to support horizontal scaling and rapid onboarding of new tenants.</li>
+              <li>Enabled secure, scalable authorization for healthcare workloads with strong multi-tenant isolation.</li>
+            </ul>
             <div class="work-tags">
+              <span class="tag">IAM</span>
+              <span class="tag">Authorization</span>
               <span class="tag">Kafka</span>
-              <span class="tag">Microservices</span>
-              <span class="tag">GraphQL</span>
+              <span class="tag">Scalability</span>
             </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </a>
+        </div>
 
-        <a href="#" class="work-item">
+        <div class="work-item project-card">
           <div>
-            <p class="work-title">Project 3 — Company name</p>
-            <p class="work-desc">
-              Brief description of what you built, the problem it solved, 
-              and the scale or impact. 2–3 sentences is enough.
-            </p>
+            <p class="work-title">Remote Service Platform</p>
+            <p class="project-highlight">Role: Backend Engineer</p>
+            <p class="project-meta">Domain: Connected Medical Devices</p>
+            <p class="project-summary">Developed backend services enabling proactive and reactive remote monitoring of medical equipment. The platform collected telemetry from connected devices and supported remote diagnostics, health monitoring, and service workflows.</p>
+            <ul class="project-bullets">
+              <li>Built REST APIs for device onboarding, cloud integration, and secure communications.</li>
+              <li>Delivered backend services and production support for connected healthcare operations.</li>
+            </ul>
+            <div class="work-tags">
+              <span class="tag">REST APIs</span>
+              <span class="tag">Cloud</span>
+              <span class="tag">Device Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">Identity &amp; Access Management</p>
+            <p class="project-highlight">Role: Backend Engineer</p>
+            <p class="project-summary">Built secure identity management capabilities for healthcare users and connected devices, covering authentication, authorization, device identities, user provisioning, and secure API access. The solution integrated closely with entitlement policies to enforce licensing and access rules.</p>
+            <div class="work-tags">
+              <span class="tag">Identity</span>
+              <span class="tag">Security</span>
+              <span class="tag">Access Control</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">Device Connectivity Platform</p>
+            <p class="project-summary">Designed backend services responsible for maintaining connectivity between medical devices and Philips cloud services, including device registration, connectivity management, telemetry ingestion, status synchronization, and device lifecycle management.</p>
+            <div class="work-tags">
+              <span class="tag">Connectivity</span>
+              <span class="tag">Telemetry</span>
+              <span class="tag">Lifecycle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">Enterprise AI Knowledge Assistant (Tech Mahindra) ⭐⭐⭐⭐☆</p>
+            <p class="project-highlight">Role: Technical Lead</p>
+            <p class="project-meta">Domain: Enterprise AI</p>
+            <p class="project-meta">Tech: Claude, OpenAI, pgvector, Java, Spring Boot</p>
+            <p class="project-summary">Designed and delivered enterprise Retrieval-Augmented Generation (RAG) applications to improve engineering productivity. The platform enables engineers to ask natural-language questions against enterprise documentation and receive context-aware answers.</p>
+            <ul class="project-bullets">
+              <li>Led AI architecture, RAG pipeline design, LLM integration, prompt engineering, and backend API development.</li>
+              <li>Delivered 3 AI use cases used by 40 engineers, improving engineering productivity and knowledge discovery.</li>
+            </ul>
+            <div class="work-tags">
+              <span class="tag">RAG</span>
+              <span class="tag">Claude</span>
+              <span class="tag">OpenAI</span>
+              <span class="tag">pgvector</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">AI-Augmented Engineering Platform</p>
+            <p class="project-summary">Introduced AI-assisted software development into engineering workflows, supporting documentation search, code explanation, requirement understanding, knowledge discovery, and AI-assisted engineering practices.</p>
+            <div class="work-tags">
+              <span class="tag">AI Engineering</span>
+              <span class="tag">Developer Productivity</span>
+              <span class="tag">Knowledge Search</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">Banking &amp; Financial Enterprise Applications (Mphasis)</p>
+            <p class="project-highlight">Role: Delivery Module Lead</p>
+            <p class="project-summary">Developed enterprise backend applications for banking and financial clients across REST APIs, enterprise Java applications, business workflows, and modernization initiatives. Led backend delivery, mentored engineers, conducted code reviews, and collaborated with architects and product teams.</p>
             <div class="work-tags">
               <span class="tag">Java</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Docker</span>
+              <span class="tag">Spring</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Team Leadership</span>
             </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </a>
+        </div>
+
+        <div class="work-item project-card">
+          <div>
+            <p class="work-title">Enterprise Document Management Platform (Xerox)</p>
+            <p class="project-summary">Developed Java-based enterprise applications supporting document management and business process automation with backend development, database design, business logic implementation, performance improvements, and production support.</p>
+            <div class="work-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">JSP</span>
+              <span class="tag">Servlets</span>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -732,7 +824,7 @@
             </div>
             <p class="experience-period">2022 – 2025</p>
           </div>
-          <p class="experience-tech">Java 17, Spring Boot, Kafka, PostgreSQL, Redis, AWS (Lambda, EC2, IAM, S3, RDS, CloudWatch), Docker, Kubernetes, REST APIs</p>
+          <p class="experience-tech">Java 17, Spring Boot, Kafka, PostgreSQL, Redis, AWS (Lambda, EC2, IAM, RDS, S3, CloudWatch), Docker, Kubernetes, REST APIs</p>
           <ul class="experience-bullets">
             <li>Architected and delivered cloud-native backend services supporting a multi-tenant SaaS healthcare platform serving 10 healthcare organizations, 15,000 connected IoT medical devices, and 5,000–10,000 enterprise users.</li>
             <li>Designed and owned 6–7 production microservices and 15–20 REST APIs, enabling secure device onboarding, entitlement management, remote connectivity, identity management, and healthcare workflow automation.</li>
