@@ -298,6 +298,54 @@
       border-radius: 3px;
     }
 
+    .project-card {
+      padding: 1.5rem 0;
+    }
+
+    .project-highlight {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .project-meta {
+      font-size: 13px;
+      color: var(--gray-3);
+      margin-bottom: 0.35rem;
+      line-height: 1.6;
+    }
+
+    .project-summary {
+      font-size: 13px;
+      color: var(--gray-2);
+      line-height: 1.7;
+      margin: 0.6rem 0 0.8rem;
+    }
+
+    .project-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin: 0 0 0.85rem;
+    }
+
+    .project-bullets li {
+      font-size: 13px;
+      color: var(--gray-2);
+      line-height: 1.6;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .project-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
     .work-arrow {
       font-size: 18px;
       color: var(--gray-5);
@@ -394,39 +442,6 @@
         white-space: normal;
       }
     }
-
-    /* WRITING */
-    .writing-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .writing-item:first-child { border-top: 1px solid var(--border); }
-
-    .writing-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 0.25rem;
-    }
-
-    .writing-sub {
-      font-size: 13px;
-      color: var(--gray-4);
-    }
-
-    .writing-link {
-      font-size: 13px;
-      color: var(--accent);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .writing-link:hover { text-decoration: underline; }
 
     /* CONTACT */
     #contact { border-bottom: none; }
@@ -538,7 +553,7 @@
     <a href="#hero" class="nav-name">Vinay</a>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#work">Projects</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -565,8 +580,8 @@
         <span>Kubernetes</span>
       </p>
       <div class="btn-row">
-        <a href="#work" class="btn btn-primary">View work</a>
-        <a href="/Users/vinaygopal/Downloads/Vinay H G - Resume.pdf" class="btn btn-secondary">Resume ↗</a>
+        <a href="#work" class="btn btn-primary">View projects</a>
+        <a href="file:///Users/vinaygopal/Downloads/Vinay%20H%20G%20-%20Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Resume ↗</a>
       </div>
     </div>
   </section>
@@ -781,22 +796,6 @@
     </div>
   </section>
 
-  <!-- WRITING -->
-  <section id="writing">
-    <div class="container">
-      <p class="section-label">Writing &amp; content</p>
-      <div class="work-list">
-        <div class="writing-item">
-          <div>
-            <p class="writing-title">GitHub · vinayhulgar</p>
-            <p class="writing-sub">Open source work, code samples, and side projects.</p>
-          </div>
-          <a href="https://github.com/vinayhulgar" target="_blank" rel="noopener" class="writing-link">View ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -818,7 +817,6 @@
         <div class="footer-links">
           <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
     </div>
